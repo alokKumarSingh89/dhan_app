@@ -23,7 +23,7 @@ class Token:
 
     def remove_token(self):
         print("---Removing all previous day file----")
-        token_folder = f"{self.__script_dir}/token";
+        token_folder = f"{self.__script_dir}/token"
         for filename in os.listdir(token_folder):
             if filename != f"{date.today()}.txt" and os.path.isfile(os.path.join(token_folder, filename)):
                 os.remove(os.path.join(token_folder, filename))

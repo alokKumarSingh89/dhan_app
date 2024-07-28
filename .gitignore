@@ -2,3 +2,6 @@ dhan_app
 cred.py
 .dhan_api
 .webscrab
+/fyersApi.log
+/fyersDataSocket.log
+/fyersRequests.log

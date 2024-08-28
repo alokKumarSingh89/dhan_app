@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "name": "EMA 9",
+    "disable": true,
+    "time_frame": 5,
+    "resmaple": "5Min",
+    "chart_type": "HA",
+    "script": "NSE:SBIN-EQ",
+    "order_type": "MIS",
+    "isPaperTrade": true,
+    "old_data": 10,
+    "indicator": ["ema"],
+    "entry": {
+      "hour": 9,
+      "minutes": 30
+    },
+    "exit": {
+      "hour": 15,
+      "minutes": 20
+    },
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "entry_condition": {
+      "bullish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": 1
+        },
+        {
+          "first": "HA_Close",
+          "operator": ">",
+          "second": "ema_9"
+        }
+      ],
+      "bearish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": -1
+        },
+        {
+          "first": "HA_Close",
+          "operator": "<",
+          "second": "ema_9"
+        }
+      ]
+    },
+    "exit_condition": {
+      "bullish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": -1
+        }
+      ],
+      "bearish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": 1
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "name": "EMA 9",
+    "disable": false,
+    "time_frame": 1,
+    "resmaple": "1Min",
+    "chart_type": "HA",
+    "script": "MCX:SILVER24SEPFUT",
+    "order_type": "MIS",
+    "isPaperTrade": true,
+    "old_data": 5,
+    "indicator": ["ema"],
+    "entry": {
+      "hour": 9,
+      "minutes": 30
+    },
+    "exit": {
+      "hour": 23,
+      "minutes": 15
+    },
+    "days": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "entry_condition": {
+      "bullish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": 1
+        },
+        {
+          "first": "HA_Close",
+          "operator": ">",
+          "second": "ema_9"
+        }
+      ],
+      "bearish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": -1
+        },
+        {
+          "first": "HA_Close",
+          "operator": "<",
+          "second": "ema_9"
+        }
+      ]
+    },
+    "exit_condition": {
+      "bullish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": -1
+        }
+      ],
+      "bearish": [
+        {
+          "first": "Candle_Type",
+          "operator": "=",
+          "second": 1
+        }
+      ]
+    }
+  }
+]

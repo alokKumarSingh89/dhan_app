@@ -1,9 +1,8 @@
-from fyers_apiv3 import fyersModel
 import pandas as pd
 import time
-from login.fyers_login.login import Login
+from brokers.fyers.login import Login
 
-from database.action import Collection, find_one, find_all, insert_many
+from database.action import Collection, find_one, find_all, add_many
 
 login = Login()
 
@@ -67,7 +66,7 @@ def run_all_availble():
         if running_strategy is None:
             running_template = update_stick(strategy)
             running_queue = running_queue + running_template
-            insert_many("running_queue", running_queue)
+            add_many("running_queue", running_queue)
         else:
             tmp = [item for item in find_all("running_queue", {"strategy_id": strategy["_id"]})]
             running_queue = running_queue + tmp

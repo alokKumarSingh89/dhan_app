@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Optional
 from enum import Enum
 
 
@@ -19,8 +19,8 @@ class OrderType(Enum):
 
 
 class ProfitType(Enum):
-    POINT = "POINT"
-    PERCENTAGE = "PERCENTAGE"
+    POINT = "Point"
+    PERCENTAGE = "Percentage"
 
 
 class Legs(BaseModel):
@@ -36,9 +36,10 @@ class Legs(BaseModel):
 class StrategyModel(BaseModel):
     name: str = Field(default="Bull", description="Strategy Name")
     legs: List[Legs]
-    script: str = Field(default="NSE:SBIN-EQ")
     order_type: OrderType = Field(default=OrderType.MIS, description="Select Intraday/Potional")
     sl_type: ProfitType = Field(description="Provide sl type", default=ProfitType.POINT)
     sl: int = Field(description="Provide SL", default=0)
     target_type: ProfitType = Field(description="Provide Target type", default=ProfitType.POINT)
     target: int = Field(description="Provide Target", default=0)
+
+

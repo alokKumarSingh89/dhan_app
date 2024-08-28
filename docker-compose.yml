@@ -1,5 +1,40 @@
 version: '3.8'
 services:
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+#  app:
+#    container_name: app
+#    build: ./Dcokerfile
+#    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+#    volumes:
+#      - .:/app
+#    ports:
+#      - 8000:8000
+#    restart: always
+#    depends_on:
+#      - redis
+#      - mongodb
+#  celery_worker:
+#    container_name: celery_worker
+#    build: .
+#    command: celery -A celery_worker worker --pool=solo --loglevel=info
+#    volumes:
+#      - .:/app
+#    depends_on:
+#      - redis
+#      - app
+#  flower:
+#    container_name: flower
+#    build: .
+#    command: celery -A celery_worker flower --port=5555
+#    ports:
+#      - 5556:5555
+#    depends_on:
+#      - app
+#      - redis
+#      - celery_worker
   mongodb:
     image: mongo:latest
     ports:

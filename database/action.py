@@ -3,13 +3,15 @@ from enum import Enum
 
 
 class Collection(Enum):
-    ETF_COLL = 'etf_script'
-    SCRIPT_COLL = 'scripts'
-    STRATEGY_COLL = "strategy"
+    BROKER = "broker_config"
 
 
-def insert_many(collection_key, data):
+def add_many(collection_key, data):
     db[collection_key].insert_many(data)
+
+
+def add_one(collection_key, data):
+    db[collection_key].insert_one(data)
 
 
 def find_all(collection_key, filter: dict):

@@ -8,8 +8,7 @@ from urllib.parse import urlparse, parse_qs
 from fyers_apiv3 import fyersModel
 
 from cred import fyers
-from login.fyers_login.token import Token
-
+from brokers.fyers.token import Token
 
 class Login:
     def __init__(self) -> None:
@@ -76,3 +75,9 @@ class Login:
         if self.__app is None:
             self.__app = fyersModel.FyersModel(client_id=fyers["client_id"], token=self.__token.get_token(), is_async=False, log_path="")
         return self.__app
+    def get_save_token(self):
+        if self.__token.get_token() is None:
+            token = self.get_token()
+            self.__token.save_token(token)
+        return self.__token.get_token()
+

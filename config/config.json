@@ -1,0 +1,27 @@
+{
+  "equity": [
+    "SBIN",
+    "TCS",
+    "BAJFINANCE",
+    "INFY",
+    "RELIANCE",
+    "LTIM",
+    "KOTAKBANK",
+    "HDFCBANK",
+    "ADANIPORTS",
+    "INDUSINDBK",
+    "ICICIBANK",
+    "AXISBANK",
+    "TATAMOTORS",
+    "SBICARD",
+    "TATASTEEL",
+    "IDFCFIRSTB"
+  ],
+  "index":[
+    "NIFTY50",
+    "FINNIFTY",
+    "MIDCPNIFTY",
+    "NIFTYBANK"
+  ],
+  "FNO": ["MCX:SILVER24SEPFUT"]
+}

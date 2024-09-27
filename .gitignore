@@ -5,3 +5,7 @@ cred.py
 /fyersApi.log
 /fyersDataSocket.log
 /fyersRequests.log
+*.csv
+*.log
+*.cpython-*
+.idea

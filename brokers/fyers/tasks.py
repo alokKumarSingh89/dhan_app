@@ -4,7 +4,6 @@ import time
 
 import pandas as pd
 from brokers.fyers.login import Login
-from brokers.fyers.sticke import getLTP
 from database.action import Collection, find_one
 
 index_list = {

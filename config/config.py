@@ -30,5 +30,3 @@ def get_strategy_list():
     f = open(f"{os.getcwd()}/config/strategy.json")
     data = json.load(f)
     return data
-
-get_script_list()

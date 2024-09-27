@@ -10,7 +10,6 @@ from starlette import status
 from brokers.fyers.routers import fyers
 from backtest_strategy.routers import strategy
 from paper_trade.mis import process
-from scripts.routers import script
 from paper_trade.router import paper_trade
 
 from database.action import add_one, Collection, find_one, find_all
@@ -35,7 +34,6 @@ app.add_middleware(
 
 app.include_router(fyers)
 app.include_router(strategy)
-app.include_router(script)
 app.include_router(paper_trade)
 
 
